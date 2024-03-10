@@ -1,25 +1,30 @@
 {
-  "name": "reactworld",
-  "version": "1.0.0",
-  "description": "Namaste",
-  "main": "App.js",
-  "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/simran5994/ReactWorld.git"
-  },
-  "keywords": [
-    "reactworld"
-  ],
-  "author": "shimran panigrahi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/simran5994/ReactWorld/issues"
-  },
-  "homepage": "https://github.com/simran5994/ReactWorld#readme",
-  "devDependencies": {
-    "parcel": "^2.12.0"
-  }
+	"name": "reactworld",
+	"version": "1.0.0",
+	"description": "Namaste",
+	"scripts": {
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/simran5994/ReactWorld.git"
+	},
+	"keywords": [
+		"reactworld"
+	],
+	"author": "shimran panigrahi",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/simran5994/ReactWorld/issues"
+	},
+	"homepage": "https://github.com/simran5994/ReactWorld#readme",
+	"devDependencies": {
+		"parcel": "^2.12.0",
+		"process": "^0.11.10"
+	},
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"browserslist": []
 }
