@@ -1,0 +1,20 @@
+Config driven ui - ui is driven by configs
+
+Index - never use index as key and key
+
+2 types of export import - default and named
+
+/** Project Design
+ * Header
+	- Logo
+	- Nave Items
+* Body
+	- Search Box
+	- Restaurant Container
+		- Restaurant Card - Photo, Name, rating, Cusinine
+* Footer
+	- Copyright
+	- Links
+	- Address
+	- Contact
+ */
