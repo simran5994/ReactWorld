@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 // import { resList } from "../../common/mockData";
 import { SWIGGY_API } from "../../common/constants";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 	const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -20,7 +21,6 @@ const Body = () => {
 					.toLowerCase()
 					.includes(value.toLowerCase())
 		);
-		console.log(searchValue);
 		searchValue.length === 0
 			? setFetchedData(listOfRestaurants)
 			: setFetchedData(searchValue);
@@ -82,7 +82,6 @@ const Body = () => {
 							const filteredList = listOfRestaurants.filter(
 								(i) => i.info.avgRating > 4.1
 							);
-							console.log(filteredList);
 							setListOfRestaurants(filteredList);
 							setShowClear(true);
 						}}
@@ -105,7 +104,9 @@ const Body = () => {
 			</div>
 			<div className='res-container'>
 				{fetchedData.map((i) => (
-					<RestaurantCard key={i.info.id} resData={i} />
+					<Link key={i.info.id} to={"/restaurants/" + i.info.id}>
+						<RestaurantCard resData={i} />
+					</Link>
 				))}
 			</div>
 		</div>
