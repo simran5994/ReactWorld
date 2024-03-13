@@ -4,7 +4,7 @@ import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
 	const { resId } = useParams();
-	const restaurantData = useRestaurantMenu(resId); // custom Hook 
+	const restaurantData = useRestaurantMenu(resId); // custom Hook
 
 	if (restaurantData === null) return <Shimmer />;
 	const { name, cuisines, costForTwoMessage } =
@@ -13,15 +13,15 @@ const RestaurantMenu = () => {
 		restaurantData?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
 			?.card;
 	return (
-		<div className='menu'>
-			<h1>{name}</h1>
-			<p>
+		<div className='m-4 p-4 w-[200px]'>
+			<h1 className="font-bold font-size-2xl">{name}</h1>
+			<p className="font-bold p-2">
 				{cuisines.join(", ")} - {costForTwoMessage}
 			</p>
-			<h2>Menu</h2>
-			<ul>
+			<h2 className="font-bold p-2">Menu</h2>
+			<ul className="p-4 list-disc">
 				{itemCards.map((i) => (
-					<li key={i.card.info.id}>{i.card.info.name}</li>
+					<li className="py-4" key={i.card.info.id}>{i.card.info.name}</li>
 				))}
 			</ul>
 		</div>

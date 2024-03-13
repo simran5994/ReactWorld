@@ -32,7 +32,7 @@ class AboutUs extends React.Component {
 		console.log("parent render");
 
 		return (
-			<div className='about-us'>
+			<div className='about-us my-4 font-bold'>
 				<h1>About Us</h1>
 				<h2>This is Namaste React About Us Component</h2>
 				{/* <User name='Shimran' /> */}
