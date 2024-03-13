@@ -4,6 +4,7 @@ import Shimmer from "./Shimmer";
 // import { resList } from "../../common/mockData";
 import { SWIGGY_API } from "../../common/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../../utils/useOnlineStatus";
 
 const Body = () => {
 	const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -11,6 +12,8 @@ const Body = () => {
 
 	const [showClear, setShowClear] = useState(false);
 	const [searchText, setSearchText] = useState("");
+
+	const checkOnline = useOnlineStatus();
 
 	const filterSearch = (value) => {
 		const searchValue = listOfRestaurants.filter(
@@ -53,6 +56,14 @@ const Body = () => {
 		setListOfRestaurants(restData);
 		setFetchedData(restData);
 	};
+
+	if (checkOnline === false) {
+		return (
+			<h1>
+				Looks like you are offline...Please check your internet connection
+			</h1>
+		);
+	}
 
 	return fetchedData.length === 0 ? (
 		<Shimmer />

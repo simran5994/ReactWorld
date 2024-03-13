@@ -1,22 +1,10 @@
-import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../../common/constants";
+import useRestaurantMenu from "../../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-	const [restaurantData, setRestaurantData] = useState(null);
-
 	const { resId } = useParams();
-
-	useEffect(() => {
-		fetchResData();
-	}, []);
-
-	const fetchResData = async () => {
-		const data = await fetch(MENU_API + resId);
-		const json = await data.json();
-		setRestaurantData(json.data);
-	};
+	const restaurantData = useRestaurantMenu(resId); // custom Hook 
 
 	if (restaurantData === null) return <Shimmer />;
 	const { name, cuisines, costForTwoMessage } =
