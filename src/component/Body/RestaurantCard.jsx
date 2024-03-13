@@ -26,4 +26,18 @@ const RestaurantCard = (props) => {
 	);
 };
 
+//Higher order component - takes input as restaurant card and returns new component promoted restaurant card
+
+export const withPromotedLabel = (RestaurantCard) => {
+	return (props) => {
+		// enhanced version of restaurant card
+		return (
+			<div>
+				<label>Open</label>
+				<RestaurantCard {...props} />
+			</div>
+		);
+	};
+};
+
 export default RestaurantCard;

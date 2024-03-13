@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import React, { useState, useEffect, useContext } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 // import { resList } from "../../common/mockData";
 import { SWIGGY_API } from "../../common/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
 
 const Body = () => {
 	const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -13,6 +14,7 @@ const Body = () => {
 	const [showClear, setShowClear] = useState(false);
 	const [searchText, setSearchText] = useState("");
 
+	const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 	const checkOnline = useOnlineStatus();
 
 	const filterSearch = (value) => {
@@ -55,7 +57,10 @@ const Body = () => {
 				?.restaurants;
 		setListOfRestaurants(restData);
 		setFetchedData(restData);
+		console.log(restData);
 	};
+
+	const { loggedInUser, setUserName } = useContext(UserContext);
 
 	if (checkOnline === false) {
 		return (
@@ -112,12 +117,23 @@ const Body = () => {
 							Clear
 						</button>
 					)}
+					<label>UserName</label>
+					<input
+						className='border border-black'
+						value={loggedInUser}
+						onChange={(e) => setUserName(e.target.value)}
+					></input>
 				</div>
 			</div>
 			<div className='res-container flex flex-wrap'>
 				{fetchedData.map((i) => (
 					<Link key={i.info.id} to={"/restaurants/" + i.info.id}>
-						<RestaurantCard resData={i} />
+						{/** if the rest is promoted then add a promoted label to it */}
+						{i?.info?.isOpen ? (
+							<RestaurantCardPromoted resData={i} />
+						) : (
+							<RestaurantCard resData={i} />
+						)}
 					</Link>
 				))}
 			</div>
