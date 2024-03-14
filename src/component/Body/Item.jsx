@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../../utils/store/cartSlice";
 import { ITEM_API } from "../../common/constants";
 const Item = ({ itemdata }) => {
-	console.log(itemdata);
+	const dispatch = useDispatch();
+
+	const handleAdd = (itemD) => {
+		dispatch(addItem(itemD));
+	};
 	return (
 		<div className='flex justify-between mx-auto py-4 border-b-2 mx-4'>
 			<div className='float-left flex flex-wrap'>
@@ -14,13 +20,16 @@ const Item = ({ itemdata }) => {
 				<p className='text-xs'>{itemdata?.card?.info?.description}</p>
 			</div>
 			<div className='flex flex-col'>
+				<button
+					className='p-2 mx-16 rounded-lg border-b-2 text-white shadow-lg bg-black'
+					onClick={() => handleAdd(itemdata)}
+				>
+					⁺
+				</button>
 				<img
-					className='w-20 h-20'
+					className='w-2- h-20'
 					src={ITEM_API + itemdata?.card?.info?.imageId}
 				></img>
-				<button className='border-b-2 font-green bg-white w-3 h-6'>
-					Add ⁺
-				</button>
 			</div>
 		</div>
 	);

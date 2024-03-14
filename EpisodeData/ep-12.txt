@@ -1,0 +1,30 @@
+Redox Toolkit
+ - install @reduxjs/toolkit and react-reduxjs
+ - build our store
+ - connect our store to our app
+ - create a cart slice
+ - dispatch action to update store
+ - selector to subscribe
+
+- make sure to subscribe to the right portion of the store to improve performance
+
+- dont mutate state - for older React , in react toolkit we can mutate the state
+
+- Immer library used in react toolkit to allow to mutate state
+
+- how to create immutable state object
+- read about rtk query, redux thunk replace with rtk query
+
+Chapter 12 - Let's Build our Store
+Theory:
+● useContext vs Redux.
+● Advantage of using Redux Toolkit over Redux.
+● Explain Dispatcher.
+● Explain Reducer.
+● Explain slice.
+● Explain selector.
+● Explain createSlice and the configuration it takes.
+Coding:
+● Practice making a store, slices and do read and write operations using Redux
+Store
+● Build Cart Flow using Redux Store

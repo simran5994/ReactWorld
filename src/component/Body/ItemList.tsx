@@ -5,15 +5,13 @@ const ItemList = ({ items }) => {
 	const BestSeller = itemBestSeller(Item);
 	return (
 		<div>
-			<ul>
-				{items.map((i) =>
-					i?.card?.info?.ribbon?.text === "Bestseller" ? (
-						<BestSeller itemdata={i} />
-					) : (
-						<Item itemdata={i} />
-					)
-				)}
-			</ul>
+			{items.map((i) =>
+				i?.card?.info?.ribbon?.text === "Bestseller" ? (
+					<BestSeller key={i?.card?.info?.id} itemdata={i} />
+				) : (
+					<Item itemdata={i} key={i?.card?.info?.id} />
+				)
+			)}
 		</div>
 	);
 };
