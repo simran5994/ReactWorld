@@ -25,4 +25,15 @@ const Item = ({ itemdata }) => {
 		</div>
 	);
 };
+
+export const itemBestSeller = (Item) => {
+	return (props) => {
+		return (
+			<div itemdata={props}>
+				<span>Bestseller</span>
+				<Item />
+			</div>
+		);
+	};
+};
 export default Item;

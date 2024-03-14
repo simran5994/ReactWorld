@@ -2,8 +2,8 @@ context vs react store
 
 Chapter 11 - Data is the new Oil
 Theory:
-● What is prop drilling?
-● What is lifting the state up?
+● What is prop drilling? // nesteing components to pass props leads to props dealing
+● What is lifting the state up? // controlling state of multiple childrens from parent (open and close accordion) 
 ● What is Context Provider and Context Consumer?
 ● If you don’t pass a value to the provider does it take the default value?
 Coding:
@@ -12,3 +12,6 @@ Coding:
 References:
 ● Lifting State Up
 ● React Context
+
+Creating Custom Hooks ✅
+Higher order Components = takes input as a component and manipulates and returns another component ✅

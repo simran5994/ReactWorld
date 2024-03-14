@@ -1,14 +1,18 @@
-import Item from "./Item";
+import Item, { itemBestSeller } from "./Item";
 
 const ItemList = ({ items }) => {
 	console.log(items);
+	const BestSeller = itemBestSeller(Item);
 	return (
 		<div>
 			<ul>
-				{items.map((i) => (
-					// <li key={i.card.info.id}>{i.card.info.name}</li>
-					<Item itemdata={i} />
-				))}
+				{items.map((i) =>
+					i?.card?.info?.ribbon?.text === "Bestseller" ? (
+						<BestSeller itemdata={i} />
+					) : (
+						<Item itemdata={i} />
+					)
+				)}
 			</ul>
 		</div>
 	);

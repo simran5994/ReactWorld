@@ -6,9 +6,10 @@ import { SWIGGY_API } from "../../common/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext";
+import useBodyMenu from "../../utils/useBodyMenu";
 
 const Body = () => {
-	const [listOfRestaurants, setListOfRestaurants] = useState([]);
+	const listOfRestaurants = useBodyMenu();
 	const [fetchedData, setFetchedData] = useState([]);
 
 	const [showClear, setShowClear] = useState(false);
@@ -46,20 +47,8 @@ const Body = () => {
 	}, []);
 
 	useEffect(() => {
-		fetchData();
-	}, []);
-
-	const fetchData = async () => {
-		const data = await fetch(SWIGGY_API);
-		const json = await data.json();
-		const restData =
-			json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-				?.restaurants;
-		setListOfRestaurants(restData);
-		setFetchedData(restData);
-		console.log(restData);
-	};
-
+		setFetchedData(listOfRestaurants);
+	}, [listOfRestaurants]);
 	const { loggedInUser, setUserName } = useContext(UserContext);
 
 	if (checkOnline === false) {
@@ -79,7 +68,7 @@ const Body = () => {
 					<input
 						type='text'
 						placeholder='Search your items'
-						className='px-4 py-2'
+						className='px-4 py-2 '
 						value={searchText}
 						onChange={(e) => {
 							setSearchText(e.target.value);
@@ -97,9 +86,9 @@ const Body = () => {
 						className='filter-btn px-4 py-2 m-4 bg-gray-200 m-4 rounded-lg'
 						onClick={() => {
 							const filteredList = listOfRestaurants.filter(
-								(i) => i.info.avgRating > 4.1
+								(i) => i.info.avgRating > 4.3
 							);
-							setListOfRestaurants(filteredList);
+							setFetchedData(filteredList);
 							setShowClear(true);
 						}}
 					>
@@ -107,19 +96,18 @@ const Body = () => {
 					</button>
 					{showClear && (
 						<button
-							className='filter-btn'
-							style={{ margin: "2px" }}
+							className='filter-btn mx-2'
 							onClick={() => {
-								setFetchedData(fetchedData);
+								setFetchedData(listOfRestaurants);
 								setShowClear(false);
 							}}
 						>
-							Clear
+							❌
 						</button>
 					)}
-					<label>UserName</label>
+					<label>UserName : </label>
 					<input
-						className='border border-black'
+						className='border border-black px-4'
 						value={loggedInUser}
 						onChange={(e) => setUserName(e.target.value)}
 					></input>
