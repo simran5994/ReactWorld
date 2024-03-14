@@ -1,0 +1,7 @@
+1-Open to make it online ✅
+2-align add button and image button ✅
+3-bring price down ✅
+4-show dummy image if image is not present
+5-add best seller tag ✅
+6-click on + should change to - and vice versa ✅
+7-remove + from cart screen   ✅

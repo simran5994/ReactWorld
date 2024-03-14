@@ -9,7 +9,6 @@ const CartDetails = () => {
 
 	// make sure to subscribe to the right portion of the store to improve performance
 	const cart = useSelector((store) => store.cart.items);
-	console.log(cart);
 	const [total, setTotal] = useState(0);
 
 	useEffect(() => {
@@ -41,12 +40,16 @@ const CartDetails = () => {
 				)}
 
 				{cart.map((itemdata) => (
-					<Item itemdata={itemdata} />
+					<Item
+						key={itemdata.card.info.id}
+						itemdata={itemdata}
+						comingFromCart={true}
+					/>
 				))}
 			</div>
 
 			{cart.length > 0 ? (
-				<div className='font-bold py-4 w-6/12'>
+				<div className='font-bold py-4 w-6/12 flex justify-between m-auto px-4'>
 					<h3>Total</h3>
 					<p>{total}</p>
 				</div>

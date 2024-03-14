@@ -14,6 +14,11 @@ const cartSlice = createSlice({
 		},
 		removeItem: (state) => {
 			state.items.pop();
+			// state.items.filter(
+			// 	(i) => i.card.info.id !== action.payload.card.info.id
+			// );
+			// console.log(a);
+			// console.log(state.items);
 		},
 		clearCart: (state) => {
 			state.items.length = 0; // or return {items: []}
