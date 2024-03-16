@@ -1,0 +1,14 @@
+JS 
+
+1- single thread or multi thread - how js works?
+2- how it handles async operations like promises, timers, - call stacks and execution context ,  event quest
+3- how js knows that promises is finished and settimeout is executed - how promises works
+4- event loop - keeps checking the event queues
+5- promises - first priority , timeout 
+6- promises and observabales - 
+7- promise.all- if 1 is reject all will be reject and promise.allsettled - gives state if 1 is reject it gives array of result with fail/succeed
+8- event emitters - a function to trigger an event manually , fires a callback , publisher subscriber model 
+9- optimisation techniques - caching/memoizing function calls (explain with example fibonacci series), use of break continue and goto operations(create lables helps to jump over certain paths), web workers (async calls in the background),avoid memory leaks - if u subscribe then make sure to unsubscribe - avoid global use function scoped variables,reuseability
+10- call and apply
+11- create object using const(cant reassign, update the values) and object.freeze(modify not possible)
+12- map (unordered list , key can have different kind of values, iterable, garbage collector doenst work) and weakMap(holds refrence to the key, every key wil have object references, not iterable, garbage collector works)

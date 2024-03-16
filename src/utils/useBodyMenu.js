@@ -6,6 +6,10 @@ const useBodyMenu = () => {
 
 	useEffect(() => {
 		fetchData();
+
+		setInterval(async () => {
+			fetchData();
+		}, 60000);
 	}, []);
 
 	const fetchData = async () => {

@@ -1,0 +1,49 @@
+Interview Experience (JavaScript and React) - Victoria’s Secret & Co.
+
+Hello Friends,
+I would like to share the second round interview experience with Victoria’s Secret & Co.
+
+➡️ First 45 min - theoretical question on security, React and current project
+➡️ Next two coding questions (60min)
+
+Theoretical questions:
+1️⃣ Asked about my current project and technically which I built some difficult feature and why I felt it was difficult (about 5min).
+
+➡️ Next few question on security related (login and JWT)
+
+2️⃣ What are different web storages and difference between them?
+3️⃣ What are the best ways to store the JWT tokens? and how do you access them when you are sending the each request to server?
+4️⃣ What kind of authentication and authorization implemented in your current project and how login works in your project?
+5️⃣ Which authorization server is used and how JWT token works?
+6️⃣ How do you handle authentication in your project for different employees (ex. admin should have all authorities and user should have only for few)
+7️⃣ Discussed the security principles followed in my organization and the security considerations while coding on the frontend.
+8️⃣ Explored React's lifecycle methods and their significance in maintaining secure web applications.
+9️⃣ About JSX and how it helps to secure your code from XSS?
+
+➡️ Scenario based
+We will fetch some data from the server and if there is any change in data then only child components should re-render else no need to, how do you handle this?
+- pure component
+
+➡️ First coding question
+Parent component ➖
+- Input box : we need to enter a statement (ex. How are you?)
+- button : When you click on this button, we need to pass the entered statement to child component.
+Child component ➖
+- we need to receive the incoming statement and display the each word with 2sec delay on screen.
+
+➖ output should be : How --2sec delay-- are --2sec delay-- you?
+
+➡️ Second coding question
+➖ They provided an end point (URL), we need to fetch the data from that URL on ***every one minute** (important point)
+➖ Basically, we will get the updated values on each fetch request
+
+Conditions 🚩
+➖ Create a custom hook which will take the given URL as an input and returns the output.
+➖ Main component should use the custom hook to get the result and display the output.
+
+I honestly tell you that I was familiar with the terms but lacked practical experience. Finally I expressed my willingness to learn and enhance my understanding of security.
+
+Result about coding questions:
+I was not able to complete them as expected (mainly I didn't get the result with delay and intervals properly)
+
+I got an email from HR saying that, I have not cleared this round but yes it was a good try and had one nice experience and learnt something new.

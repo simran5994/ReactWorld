@@ -1,0 +1,21 @@
+Promises: Dive into asynchronous programming and how Promises are used to handle async operations in JavaScript.
+
+2️⃣ Closures: Explore the power of closures and how they can be leveraged in front-end development to encapsulate data and create private variables.
+
+3️⃣ Critical Rendering Path: Understand the five crucial steps involved in the Critical Rendering Path, which plays a vital role in how web pages are loaded and displayed in browsers.
+
+4️⃣ Object Methods: Grasp the intricacies of Object methods like Object.create, Object.assign, and Object.freeze, and how they can be utilized for object manipulation and immutability.
+
+5️⃣ Prototypical Chaining/Inheritance: Gain a deep understanding of prototypical inheritance in JavaScript and how it influences object relationships and code organization in front-end development.
+
+6️⃣ Currying & Composing: Explore functional programming techniques like currying and composing, which promote code modularity, reusability, and cleaner front-end code.
+
+7️⃣ setTimeout, setInterval & Promise Related Output Problems: Be ready to tackle problems related to timing functions and promises, as they are often encountered when handling animations, API requests, or handling complex user interactions.
+
+8️⃣ Data Structures and Algorithms (DSA): Focus on mastering data structures like arrays, strings, and trees Additionally, understand concepts related to recursion, stacks, queues, priority queues, and dynamic programming, as they can come up in coding challenges.
+
+9️⃣ Other JS Basic Concepts: Review important JavaScript concepts such as hoisting, scoping, closures, and variable declaration, as they form the foundation of front-end development.
+
+🔟 Polyfills: Familiarize yourself with polyfills for essential JavaScript methods like map, reduce, filter, bind, and Promise methods like Promise.all and Promise.allSettled. These polyfills ensure compatibility with older browsers and enhance the functionality of your front-end code.
+
+🔟 Tricky Problems: Prepare to tackle challenges related to 'this' and arrow functions, as they can have unexpected behavior in certain scenarios. Understanding their nuances will help you write clean and reliable front-end code.

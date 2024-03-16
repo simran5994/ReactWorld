@@ -49,6 +49,7 @@ const Body = () => {
 	useEffect(() => {
 		setFetchedData(listOfRestaurants);
 	}, [listOfRestaurants]);
+
 	const { loggedInUser, setUserName } = useContext(UserContext);
 
 	if (checkOnline === false) {
