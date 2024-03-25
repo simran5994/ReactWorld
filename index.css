@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.row {
+    background: #eee;
+    border: 1px solid #ccc;
+    height: 50px;
+    width:50%;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
+
+    
